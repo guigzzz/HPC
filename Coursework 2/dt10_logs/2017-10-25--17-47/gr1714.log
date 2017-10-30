@@ -1,0 +1,121 @@
+
+Cloning into 'hpce-2017-cw2-gr1714'...
+gr1714, 0, Have results/direct_inner_versus_k.pdf, PASS
+Makeing : ./tmp/gr1714/working/results in /vagrant/scripts/cw2
+cp ./tmp/gr1714/hpce-2017-cw2-gr1714/results/direct_inner_versus_k.pdf ./tmp/gr1714/working/results/direct_inner_versus_k.pdf
+gr1714, 1, Have results/direct_outer_time_versus_p.pdf, PASS
+Makeing : ./tmp/gr1714/working/results in /vagrant/scripts/cw2
+cp ./tmp/gr1714/hpce-2017-cw2-gr1714/results/direct_outer_time_versus_p.pdf ./tmp/gr1714/working/results/direct_outer_time_versus_p.pdf
+gr1714, 2, Have results/direct_outer_strong_scaling.pdf, PASS
+Makeing : ./tmp/gr1714/working/results in /vagrant/scripts/cw2
+cp ./tmp/gr1714/hpce-2017-cw2-gr1714/results/direct_outer_strong_scaling.pdf ./tmp/gr1714/working/results/direct_outer_strong_scaling.pdf
+gr1714, 3, Have results/direct_outer_strong_scaling.pdf, PASS
+Makeing : ./tmp/gr1714/working/results in /vagrant/scripts/cw2
+cp ./tmp/gr1714/hpce-2017-cw2-gr1714/results/direct_outer_strong_scaling.pdf ./tmp/gr1714/working/results/direct_outer_strong_scaling.pdf
+gr1714, 4, Have results/fast_fourier_time_vs_recursion_k.pdf, PASS
+Makeing : ./tmp/gr1714/working/results in /vagrant/scripts/cw2
+cp ./tmp/gr1714/hpce-2017-cw2-gr1714/results/fast_fourier_time_vs_recursion_k.pdf ./tmp/gr1714/working/results/fast_fourier_time_vs_recursion_k.pdf
+gr1714, 5, Have results/fast_fourier_recursion_versus_iteration.pdf, PASS
+Makeing : ./tmp/gr1714/working/results in /vagrant/scripts/cw2
+cp ./tmp/gr1714/hpce-2017-cw2-gr1714/results/fast_fourier_recursion_versus_iteration.pdf ./tmp/gr1714/working/results/fast_fourier_recursion_versus_iteration.pdf
+gr1714, 6, Have src/gr1714/direct_fourier_transform_parfor_inner.cpp, PASS
+Makeing : ./tmp/gr1714/working/src/gr1714 in /vagrant/scripts/cw2
+cp ./tmp/gr1714/hpce-2017-cw2-gr1714/src/gr1714/direct_fourier_transform_parfor_inner.cpp ./tmp/gr1714/working/src/gr1714/direct_fourier_transform_parfor_inner.cpp
+dos2unix: converting file ./tmp/gr1714/working/src/gr1714/direct_fourier_transform_parfor_inner.cpp to Unix format ...
+gr1714, 7, Have src/gr1714/direct_fourier_transform_parfor_outer.cpp, PASS
+Makeing : ./tmp/gr1714/working/src/gr1714 in /vagrant/scripts/cw2
+cp ./tmp/gr1714/hpce-2017-cw2-gr1714/src/gr1714/direct_fourier_transform_parfor_outer.cpp ./tmp/gr1714/working/src/gr1714/direct_fourier_transform_parfor_outer.cpp
+dos2unix: converting file ./tmp/gr1714/working/src/gr1714/direct_fourier_transform_parfor_outer.cpp to Unix format ...
+gr1714, 8, Have src/gr1714/fast_fourier_transform_taskgroup.cpp, PASS
+Makeing : ./tmp/gr1714/working/src/gr1714 in /vagrant/scripts/cw2
+cp ./tmp/gr1714/hpce-2017-cw2-gr1714/src/gr1714/fast_fourier_transform_taskgroup.cpp ./tmp/gr1714/working/src/gr1714/fast_fourier_transform_taskgroup.cpp
+dos2unix: converting file ./tmp/gr1714/working/src/gr1714/fast_fourier_transform_taskgroup.cpp to Unix format ...
+gr1714, 9, Have src/gr1714/fast_fourier_transform_parfor.cpp, PASS
+Makeing : ./tmp/gr1714/working/src/gr1714 in /vagrant/scripts/cw2
+cp ./tmp/gr1714/hpce-2017-cw2-gr1714/src/gr1714/fast_fourier_transform_parfor.cpp ./tmp/gr1714/working/src/gr1714/fast_fourier_transform_parfor.cpp
+dos2unix: converting file ./tmp/gr1714/working/src/gr1714/fast_fourier_transform_parfor.cpp to Unix format ...
+gr1714, 10, Have src/gr1714/fast_fourier_transform_combined.cpp, PASS
+Makeing : ./tmp/gr1714/working/src/gr1714 in /vagrant/scripts/cw2
+cp ./tmp/gr1714/hpce-2017-cw2-gr1714/src/gr1714/fast_fourier_transform_combined.cpp ./tmp/gr1714/working/src/gr1714/fast_fourier_transform_combined.cpp
+dos2unix: converting file ./tmp/gr1714/working/src/gr1714/fast_fourier_transform_combined.cpp to Unix format ...
+gr1714, 11, Have src/fourier_transform_register_factories.cpp, PASS
+Makeing : ./tmp/gr1714/working/src in /vagrant/scripts/cw2
+cp ./tmp/gr1714/hpce-2017-cw2-gr1714/src/fourier_transform_register_factories.cpp ./tmp/gr1714/working/src/fourier_transform_register_factories.cpp
+dos2unix: converting file ./tmp/gr1714/working/src/fourier_transform_register_factories.cpp to Unix format ...
+Overwriting files in src directory (except for registry)
+(cd ./tmp/gr1714/working/src && g++ -std=c++14 -O3 -msse4 -g -I ../include direct_fourier_transform.cpp fast_fourier_transform.cpp fourier_transform.cpp fourier_transform_register_factories.cpp gr1714/*.cpp /vagrant/scripts/cw2/scripts/bench_test_fourier_transform.cpp -o ../test_fourier_transform -ltbb) &> ./tmp/gr1714/log/build_test_fourier.log
+gr1714, 12, Can build test_fourier_transform, PASS
+(cd ./tmp/gr1714/working/src && g++ -std=c++14 -O3 -msse4 -g -I ../include direct_fourier_transform.cpp fast_fourier_transform.cpp fourier_transform.cpp fourier_transform_register_factories.cpp gr1714/*.cpp /vagrant/scripts/cw2/scripts/bench_time_fourier_transform.cpp -o ../time_fourier_transform -ltbb) &> ./tmp/gr1714/log/build_time_fourier.log
+gr1714, 13, Can build time_fourier_transform, PASS
+(cd $WORKING_DIR && /usr/bin/timeout 60 ./test_fourier_transform 2>&1) | grep hpce.direct_fourier_transform -
+hpce.direct_fourier_transform
+gr1714, 14, Checking test_fourier_transform still lists 'hpce.direct_fourier_transform', PASS
+(cd $WORKING_DIR && /usr/bin/timeout 60 ./test_fourier_transform 2>&1) | grep hpce.fast_fourier_transform -
+hpce.fast_fourier_transform
+gr1714, 15, Checking test_fourier_transform still lists 'hpce.fast_fourier_transform', PASS
+(cd $WORKING_DIR && /usr/bin/timeout 60 ./test_fourier_transform 2>&1) | grep hpce.$SL.direct_fourier_transform_parfor_inner -
+hpce.gr1714.direct_fourier_transform_parfor_inner
+gr1714, 16, Checking test_fourier_transform now lists 'hpce.gr1714.direct_fourier_transform_parfor_inner', PASS
+(cd $WORKING_DIR && /usr/bin/timeout 60 ./test_fourier_transform 2>&1) | grep hpce.$SL.direct_fourier_transform_parfor_outer -
+hpce.gr1714.direct_fourier_transform_parfor_outer
+gr1714, 17, Checking test_fourier_transform now lists 'hpce.gr1714.direct_fourier_transform_parfor_outer', PASS
+(cd $WORKING_DIR && /usr/bin/timeout 60 ./test_fourier_transform 2>&1) | grep hpce.$SL.fast_fourier_transform_parfor -
+hpce.gr1714.fast_fourier_transform_parfor
+gr1714, 18, Checking test_fourier_transform now lists 'hpce.gr1714.fast_fourier_transform_parfor', PASS
+(cd $WORKING_DIR && /usr/bin/timeout 60 ./test_fourier_transform 2>&1) | grep hpce.$SL.fast_fourier_transform_taskgroup -
+hpce.gr1714.fast_fourier_transform_taskgroup
+gr1714, 19, Checking test_fourier_transform now lists 'hpce.gr1714.fast_fourier_transform_taskgroup', PASS
+(cd $WORKING_DIR && /usr/bin/timeout 60 ./test_fourier_transform 2>&1) | grep hpce.$SL.fast_fourier_transform_combined -
+hpce.gr1714.fast_fourier_transform_combined
+gr1714, 20, Checking test_fourier_transform now lists 'hpce.gr1714.fast_fourier_transform_combined', PASS
+(cd $WORKING_DIR/src && g++ -std=c++14 -E -I ../include $SL/direct_fourier_transform_parfor_inner.cpp -o -) \ | $SCRIPTS_DIR/extract_preprocessed_part.pl $SL/direct_fourier_transform_parfor_inner.cpp \ | grep parallel_for -
+            tbb::parallel_for(
+            tbb::parallel_for(
+gr1714, 21, Checking direct_fourier_transform_parfor_inner.cpp calls parallel_for at some point., PASS
+(cd $WORKING_DIR/src && g++ -std=c++14 -E -I ../include $SL/direct_fourier_transform_parfor_inner.cpp -o -) \ | $SCRIPTS_DIR/extract_preprocessed_part.pl $SL/direct_fourier_transform_parfor_inner.cpp \ | grep partitioner -
+                tbb::simple_partitioner()
+                tbb::simple_partitioner()
+gr1714, 22, Checking direct_fourier_transform_parfor_inner.cpp uses partitioner., PASS
+(cd $WORKING_DIR/src && g++ -std=c++14 -E -I ../include $SL/direct_fourier_transform_parfor_outer.cpp -o -) \ | $SCRIPTS_DIR/extract_preprocessed_part.pl $SL/direct_fourier_transform_parfor_outer.cpp \ | grep parallel_for -
+        tbb::parallel_for(
+        tbb::parallel_for(
+gr1714, 23, Checking direct_fourier_transform_parfor_outer.cpp calls parallel_for at some point., PASS
+(cd $WORKING_DIR/src && g++ -std=c++14 -E -I ../include $SL/fast_fourier_transform_taskgroup.cpp -o -) \ | $SCRIPTS_DIR/extract_preprocessed_part.pl $SL/fast_fourier_transform_taskgroup.cpp \ | grep task_group -
+    tbb::task_group group;
+gr1714, 24, Checking fast_fourier_transform_taskgroup.cpp uses task groups at some point., PASS
+(cd $WORKING_DIR/src && g++ -std=c++14 -E -I ../include $SL/fast_fourier_transform_parfor.cpp -o -) \ | $SCRIPTS_DIR/extract_preprocessed_part.pl $SL/fast_fourier_transform_parfor.cpp \ | grep parallel_for -
+            tbb::parallel_for(
+gr1714, 25, Checking fast_fourier_transform_parfor.cpp uses parallel_for at some point., PASS
+(cd $WORKING_DIR/src && g++ -std=c++14 -E -I ../include $SL/fast_fourier_transform_combined.cpp -o -) \ | $SCRIPTS_DIR/extract_preprocessed_part.pl $SL/fast_fourier_transform_combined.cpp \ | grep parallel_for -
+                tbb::parallel_for(
+gr1714, 26, Checking fast_fourier_transform_combined.cpp uses parallel_for., PASS
+(cd $WORKING_DIR/src && g++ -std=c++14 -E -I ../include $SL/fast_fourier_transform_combined.cpp -o -) \ | $SCRIPTS_DIR/extract_preprocessed_part.pl $SL/fast_fourier_transform_combined.cpp \ | grep task_group -
+    tbb::task_group group;
+gr1714, 27, Checking fast_fourier_transform_combined.cpp also uses task_group., PASS
+[[ -f $WORKING_DIR/test_fourier_transform ]] && ( /usr/bin/timeout -k ${MAXLIMIT} ${TIMELIMIT} $WORKING_DIR/test_fourier_transform hpce.$SL.direct_fourier_transform_parfor_inner ) 2>&1 | ${LOG_THROTTLE} > $LOG_DIR/test_direct_fourier_transform_parfor_inner.log
+gr1714, 28, Testing direct_fourier_transform_parfor_inner (using external tester), every test should pass., PASS
+[[ -f $WORKING_DIR/test_fourier_transform ]] && ( /usr/bin/timeout -k ${MAXLIMIT} ${TIMELIMIT} $WORKING_DIR/test_fourier_transform hpce.$SL.direct_fourier_transform_parfor_outer ) 2>&1 | ${LOG_THROTTLE} > $LOG_DIR/test_direct_fourier_transform_parfor_outer.log
+gr1714, 29, Testing direct_fourier_transform_parfor_outer (using external tester), every test should pass., PASS
+[[ -f $WORKING_DIR/test_fourier_transform ]] && ( /usr/bin/timeout -k ${MAXLIMIT} ${TIMELIMIT} $WORKING_DIR/test_fourier_transform hpce.$SL.fast_fourier_transform_taskgroup ) 2>&1 | ${LOG_THROTTLE} > $LOG_DIR/test_fast_fourier_transform_taskgroup.log
+gr1714, 30, Testing fast_fourier_transform_taskgroup (using external tester), every test should pass., PASS
+[[ -f $WORKING_DIR/test_fourier_transform ]] && ( /usr/bin/timeout -k ${MAXLIMIT} ${TIMELIMIT} $WORKING_DIR/test_fourier_transform hpce.$SL.fast_fourier_transform_parfor ) 2>&1 | ${LOG_THROTTLE} > $LOG_DIR/test_fast_fourier_transform_parfor.log
+gr1714, 31, Testing fast_fourier_transform_parfor (using external tester), every test should pass., PASS
+[[ -f $WORKING_DIR/test_fourier_transform ]] && ( /usr/bin/timeout -k ${MAXLIMIT} ${TIMELIMIT} $WORKING_DIR/test_fourier_transform hpce.$SL.fast_fourier_transform_combined ) 2>&1 | ${LOG_THROTTLE} > $LOG_DIR/test_fast_fourier_transform_combined.log
+gr1714, 32, Testing fast_fourier_transform_combined (using external tester), every test should pass., PASS
+user = 0.556, time=0.193551
+echo parallelism = X 2.8726279456 X
+gr1714, 33, Timing hpce.gr1714.fast_fourier_transform_taskgroup with 4 CPUs and n=2^20: check observed parallelism (totalTime/wallTime) of 2.8726279456 is more than 2.5., PASS
+user = 53.148, time=25.1523
+echo parallelism = X 2.1130438698 X
+gr1714, 34, Timing hpce.gr1714.fast_fourier_transform_parfor with 4 CPUs and n=2^24: check observed parallelism (totalTime/wallTime) of 2.1130438698 is more than 1.1., PASS
+user = 1.004, time=0.263362
+echo parallelism = 3.8122410239
+gr1714, 35, Timing hpce.gr1714.fast_fourier_transform_combined with 4 CPUs and n=2^20: check observed parallelism (totalTime/wallTime) of 3.8122410239 is more than 2.5., PASS
+true
+gr1714, 36, For 4 CPUs, n=2^12, direct: check time for serial (3.5469996080) is greater than parfor (1.6548773230)., PASS
+true
+gr1714, 37, For 4 CPUs, n=2^22, fast: check time for serial (2.3015408570) is at least 2x that of taskgroup (0.7866446640)., PASS
+true
+gr1714, 38, For 4 CPUs, n=2^22, fast: check time for parfor (5.2172020430) is at least 1.5x that of combined (1.1510652890)., PASS
+
+Passed 39 out of 39 tests.

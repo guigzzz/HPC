@@ -1,0 +1,13 @@
+*.gz
+*.tgz
+*.a
+*.o
+*.so
+*.dll
+*.dll.a
+*.lib
+*.pdb
+bin/*
+!bin/.gitignore
+**/Release
+**/Debug

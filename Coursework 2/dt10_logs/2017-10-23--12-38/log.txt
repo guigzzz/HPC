@@ -1,0 +1,43 @@
+
+gr1714, 0, Have results/direct_inner_versus_k.pdf, PASS
+gr1714, 1, Have results/direct_outer_time_versus_p.pdf, PASS
+gr1714, 2, Have results/direct_outer_strong_scaling.pdf, PASS
+gr1714, 3, Have results/direct_outer_strong_scaling.pdf, PASS
+gr1714, 4, Have results/fast_fourier_time_vs_recursion_k.pdf, PASS
+gr1714, 5, Have results/fast_fourier_recursion_versus_iteration.pdf, PASS
+gr1714, 6, Have src/gr1714/direct_fourier_transform_parfor_inner.cpp, PASS
+gr1714, 7, Have src/gr1714/direct_fourier_transform_parfor_outer.cpp, PASS
+gr1714, 8, Have src/gr1714/fast_fourier_transform_taskgroup.cpp, PASS
+gr1714, 9, Have src/gr1714/fast_fourier_transform_parfor.cpp, PASS
+gr1714, 10, Have src/gr1714/fast_fourier_transform_combined.cpp, PASS
+gr1714, 11, Have src/fourier_transform_register_factories.cpp, PASS
+Overwriting files in src directory (except for registry)
+gr1714, 12, Can build test_fourier_transform, PASS
+gr1714, 13, Can build time_fourier_transform, PASS
+gr1714, 14, Checking test_fourier_transform still lists 'hpce.direct_fourier_transform', PASS
+gr1714, 15, Checking test_fourier_transform still lists 'hpce.fast_fourier_transform', PASS
+gr1714, 16, Checking test_fourier_transform now lists 'hpce.gr1714.direct_fourier_transform_parfor_inner', PASS
+gr1714, 17, Checking test_fourier_transform now lists 'hpce.gr1714.direct_fourier_transform_parfor_outer', PASS
+gr1714, 18, Checking test_fourier_transform now lists 'hpce.gr1714.fast_fourier_transform_parfor', PASS
+gr1714, 19, Checking test_fourier_transform now lists 'hpce.gr1714.fast_fourier_transform_taskgroup', PASS
+gr1714, 20, Checking test_fourier_transform now lists 'hpce.gr1714.fast_fourier_transform_combined', PASS
+gr1714, 21, Checking direct_fourier_transform_parfor_inner.cpp calls parallel_for at some point., PASS
+gr1714, 22, Checking direct_fourier_transform_parfor_inner.cpp uses partitioner., PASS
+gr1714, 23, Checking direct_fourier_transform_parfor_outer.cpp calls parallel_for at some point., PASS
+gr1714, 24, Checking fast_fourier_transform_taskgroup.cpp uses task groups at some point., PASS
+gr1714, 25, Checking direct_fourier_transform_parfor.cpp uses parallel_for at some point., PASS
+gr1714, 26, Checking direct_fourier_transform_combined.cpp uses parallel_for., PASS
+gr1714, 27, Checking direct_fourier_transform_combined.cpp also uses task_group., PASS
+gr1714, 28, Testing direct_fourier_transform_parfor_inner (using external tester), every test should pass., PASS
+gr1714, 29, Testing direct_fourier_transform_parfor_outer (using external tester), every test should pass., PASS
+gr1714, 30, Testing fast_fourier_transform_taskgroup (using external tester), every test should pass., PASS
+gr1714, 31, Testing fast_fourier_transform_parfor (using external tester), every test should pass., PASS
+gr1714, 32, Testing fast_fourier_transform_combined (using external tester), every test should pass., PASS
+gr1714, 33, Timing hpce.gr1714.fast_fourier_transform_taskgroup with 4 CPUs and n=2^20: check observed parallelism (totalTime/wallTime) of 3.2591838968 is more than 2.5., PASS
+gr1714, 34, Timing hpce.gr1714.fast_fourier_transform_parfor with 4 CPUs and n=2^24: check observed parallelism (totalTime/wallTime) of 2.0660012189 is more than 1.1., PASS
+gr1714, 35, Timing hpce.gr1714.fast_fourier_transform_combined with 4 CPUs and n=2^20: check observed parallelism (totalTime/wallTime) of 3.7228368746 is more than 2.5., PASS
+gr1714, 36, For 4 CPUs, n=2^12, direct: check time for serial (3.5436526350) is greater than parfor (0.9429019640)., PASS
+gr1714, 37, For 4 CPUs, n=2^22, fast: check time for serial (2.3020438390) is at least 2x that of taskgroup (0.7739757630)., PASS
+gr1714, 38, For 4 CPUs, n=2^22, fast: check time for parfor (5.2853085900) is at least 1.5x that of combined (1.0876099440)., PASS
+
+Passed 39 out of 39 tests.
