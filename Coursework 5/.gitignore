@@ -1,0 +1,12 @@
+*.o
+*.exe
+*.lib
+*.a
+*.in
+*.ref
+*.got
+*.stackdump
+.vscode
+
+w/
+dt10_runs

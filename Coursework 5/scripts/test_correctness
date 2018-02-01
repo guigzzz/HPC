@@ -1,0 +1,10 @@
+#!/bin/bash
+
+mkdir -p w
+
+echo "==> Hold time"
+for i in {1..250} 500 1000; do
+    echo "${i}"
+    bin/run_puzzle hold_time "$i" 0 >"./w/log_$i.txt" 2>&1 || echo "ERROR"
+done
+
